@@ -27,3 +27,15 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+const items = images.map((image) => {
+  const itemEl = document.createElement('li');
+  const imageEl = document.createElement('img');
+  imageEl.src = image.url;
+  imageEl.alt = image.alt;
+  imageEl.width = 360;
+  itemEl.appendChild(imageEl);
+  return itemEl;
+});
+
+listEl.append(...items);
